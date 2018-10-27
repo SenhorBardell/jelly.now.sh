@@ -11,4 +11,4 @@ RUN yarn
 COPY . .
 
 # Build and export the app
-RUN yarn build && yarn deploy -o /public
+RUN yarn build && yarn export -o /public
