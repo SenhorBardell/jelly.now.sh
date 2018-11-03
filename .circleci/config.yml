@@ -34,8 +34,8 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-      - run: yarn deploy
-      - run: yarn now alias jelly
+      - run: yarn deploy -t $NOW_TOKEN
+      - run: yarn now alias jelly -t $NOW_TOKEN
 
 workflows:
   version: 2
