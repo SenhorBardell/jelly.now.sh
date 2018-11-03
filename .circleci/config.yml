@@ -27,6 +27,7 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - run: yarn test
   deploy:
     docker:
       - image: circleci/node:latest
