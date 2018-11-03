@@ -6,17 +6,27 @@
   "author": "Vlad Rimsha <senhorbardell@gmail.com>",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/SenhorBardell/jelly.now.sh"
+  },
   "dependencies": {
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest && codecov",
+    "lint": "eslint .",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "now"
   },
   "now": {
     "type": "static"
@@ -26,19 +36,68 @@
       "next/babel"
     ]
   },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
+    "codecov": "^3.1.0",
     "danger": "^6.0.2",
+    "eslint": "^5.8.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
+    "now": "^11.5.1",
     "prettier": "1.14.3",
     "pretty-quick": "^1.8.0"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "eslintIgnore": [
+    "coverage/",
+    ".next",
+    "public"
+  ],
+  "eslintConfig": {
+    "settings": {
+      "react": {
+        "version": "16.6"
+      }
+    },
+    "extends": [
+      "standard",
+      "plugin:react/recommended",
+      "prettier",
+      "prettier/react"
+    ],
+    "plugins": [
+      "react",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true,
+      "browser": true
+    },
+    "rules": {
+      "react/display-name": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/prop-types": 0,
+      "react/jsx-uses-vars": [
+        2
+      ]
     }
   }
 }
