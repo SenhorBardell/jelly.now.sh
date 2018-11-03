@@ -1,1 +1,5 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/bc2a087a19dfa7b3dc21/maintainability)](https://codeclimate.com/github/SenhorBardell/jelly.now.sh/maintainability)
+[![CircleCI](https://circleci.com/gh/SenhorBardell/jelly.now.sh.svg?style=svg)](https://circleci.com/gh/SenhorBardell/jelly.now.sh)
+
+[![codecov](https://codecov.io/gh/SenhorBardell/jelly.now.sh/branch/master/graph/badge.svg)](https://codecov.io/gh/SenhorBardell/jelly.now.sh)
+
+Jelly software development source code
